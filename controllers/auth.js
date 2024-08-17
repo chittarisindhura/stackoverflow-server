@@ -60,7 +60,7 @@ export const forgotPassword = async (req, res) => {
     const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, "test", {
       expiresIn: "5h",
     });
-    const link = `http://localhost:3000/resetPassword/${oldUser._id}/${token}`;
+    const link = `https://stackoverflow-topaz-eta.vercel.app//resetPassword/${oldUser._id}/${token}`;
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
